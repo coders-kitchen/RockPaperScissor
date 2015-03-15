@@ -1,4 +1,4 @@
-package com.coderskitchen.rpsgame;
+package com.coderskitchen.rockpaperscissor;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,21 +14,17 @@ public class Main {
     public static final String RANDOM_GESTURE_PLAYER_NAME = "B";
 
     public static void main(String[] args) {
-
-        RockPaperScissorGameSettings rockPaperScissorGameSettings = buildGameSettings(NUMBER_OF_ROUNDS);
-        GameResultSheet gameResultSheet = new GameResultSheet();
-
-        RuleOutcomeCallbackImpl gameRoundResultCallback = new RuleOutcomeCallbackImpl(gameResultSheet);
+        RockPaperScissorGameSettings rockPaperScissorGameSettings = buildGameSettings(NUMBER_OF_ROUNDS, new RockPaperScissorGameRule());
 
         RockPaperScissorGameController rockPaperScissorGameController = new RockPaperScissorGameController();
-        rockPaperScissorGameController.play(rockPaperScissorGameSettings, gameRoundResultCallback);
+        GameResultSheet gameResultSheet = rockPaperScissorGameController.play(rockPaperScissorGameSettings);
         rockPaperScissorGameController.displayResults(rockPaperScissorGameSettings, gameResultSheet);
     }
 
-    private static RockPaperScissorGameSettings buildGameSettings(int numberOfRoundsToPlay) {
+    private static RockPaperScissorGameSettings buildGameSettings(int numberOfRoundsToPlay, RockPaperScissorGameRule rockPaperScissorGameRule) {
         Player firstPlayer = buildPaperOnlyPlayer(PAPER_ONLY_PLAYER_NAME);
         Player secondPlayer = buildRandomGesturePlayer(RANDOM_GESTURE_PLAYER_NAME);
-        return new RockPaperScissorGameSettings(numberOfRoundsToPlay, firstPlayer, secondPlayer, new RockPaperScissorRule());
+        return new RockPaperScissorGameSettings(numberOfRoundsToPlay, firstPlayer, secondPlayer, rockPaperScissorGameRule);
     }
 
     private static Player buildPaperOnlyPlayer(String playerName) {

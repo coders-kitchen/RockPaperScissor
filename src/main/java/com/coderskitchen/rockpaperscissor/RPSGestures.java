@@ -1,4 +1,4 @@
-package com.coderskitchen.rpsgame;
+package com.coderskitchen.rockpaperscissor;
 
 public class RPSGestures {
     public static final String PAPER = "PAPER";

@@ -1,4 +1,4 @@
-package com.coderskitchen.rpsgame;
+package com.coderskitchen.rockpaperscissor;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class RuleOutcomeCallbackImplTest {
+public class RoundOutcomeCallbackImplTest {
 
     private GameResultSheet gameResultSheet;
     private RuleOutcomeCallbackImpl cut;
