@@ -1,4 +1,4 @@
-package com.coderskitchen.rockpaperscissor;
+package com.coderskitchen.rockpaperscissor.game.gesture;
 
 public class RPSGestures {
     public static final String PAPER = "PAPER";

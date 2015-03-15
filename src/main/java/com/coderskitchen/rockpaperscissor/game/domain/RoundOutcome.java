@@ -1,4 +1,4 @@
-package com.coderskitchen.rockpaperscissor;
+package com.coderskitchen.rockpaperscissor.game.domain;
 
 /**
  * Created by Peter on 15.03.2015.

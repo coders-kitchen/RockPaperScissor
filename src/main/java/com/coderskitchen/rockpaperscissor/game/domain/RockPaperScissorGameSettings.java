@@ -1,4 +1,6 @@
-package com.coderskitchen.rockpaperscissor;
+package com.coderskitchen.rockpaperscissor.game.domain;
+
+import com.coderskitchen.rockpaperscissor.game.rule.RockPaperScissorGameRule;
 
 /**
  * Created by Peter on 15.03.2015.
@@ -10,9 +12,9 @@ public class RockPaperScissorGameSettings {
     private final RockPaperScissorGameRule rockPaperScissorGameRule;
 
     public RockPaperScissorGameSettings(Integer numberOfRoundsToPlay, Player firstPlayer, Player secondPlayer, RockPaperScissorGameRule rockPaperScissorGameRule) {
-        assert numberOfRoundsToPlay > 0 : "Number of rounds to play must be greater than 0";
-        assert firstPlayer != null : "First player must be not null";
-        assert secondPlayer != null : "Second player must be not null";
+        assert numberOfRoundsToPlay > 0 : "Number of rounds to runGameAndDisplayResults must be greater than 0";
+        assert firstPlayer != null : "First gesture must be not null";
+        assert secondPlayer != null : "Second gesture must be not null";
         assert rockPaperScissorGameRule != null : "RockPaperScissorRule must not be null";
 
         this.numberOfRoundsToPlay = numberOfRoundsToPlay;

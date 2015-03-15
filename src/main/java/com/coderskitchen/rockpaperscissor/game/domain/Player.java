@@ -1,4 +1,6 @@
-package com.coderskitchen.rockpaperscissor;
+package com.coderskitchen.rockpaperscissor.game.domain;
+
+import com.coderskitchen.rockpaperscissor.game.gesture.GestureChoosingStrategy;
 
 /**
  * Created by Peter on 15.03.2015.

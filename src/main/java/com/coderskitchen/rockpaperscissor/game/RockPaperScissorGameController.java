@@ -1,11 +1,17 @@
-package com.coderskitchen.rockpaperscissor;
+package com.coderskitchen.rockpaperscissor.game;
+
+import com.coderskitchen.rockpaperscissor.game.domain.GameResultSheet;
+import com.coderskitchen.rockpaperscissor.game.domain.RockPaperScissorGameSettings;
+import com.coderskitchen.rockpaperscissor.game.domain.Player;
+import com.coderskitchen.rockpaperscissor.game.rule.RockPaperScissorGameRule;
+import com.coderskitchen.rockpaperscissor.game.domain.RoundOutcome;
 
 /**
  * Created by Peter on 15.03.2015.
  */
 public class RockPaperScissorGameController {
 
-    public GameResultSheet play(RockPaperScissorGameSettings rockPaperScissorGameSettings) {
+    public GameResultSheet playGame(RockPaperScissorGameSettings rockPaperScissorGameSettings) {
         Integer numberOfRoundsLeft = rockPaperScissorGameSettings.getNumberOfRoundsToPlay();
 
         RockPaperScissorGameRule rockPaperScissorGameRule = rockPaperScissorGameSettings.getRockPaperScissorGameRule();
@@ -15,14 +21,18 @@ public class RockPaperScissorGameController {
         GameResultSheet gameResultSheet = new GameResultSheet();
 
         while (numberOfRoundsLeft > 0) {
-            String gestureChosenByFirstPlayer = firstPlayer.chooseGesture();
-            String gestureChosenBySecondPlayer = secondPlayer.chooseGesture();
-
-            RoundOutcome roundOutcome = rockPaperScissorGameRule.calculateRoundOutcome(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
-            gameResultSheet = applyRoundOutcomeToResultSheet(roundOutcome, gameResultSheet);
+            gameResultSheet = playRound(rockPaperScissorGameRule, firstPlayer, secondPlayer, gameResultSheet);
             numberOfRoundsLeft--;
         }
         return gameResultSheet;
+    }
+
+    private GameResultSheet playRound(RockPaperScissorGameRule rockPaperScissorGameRule, Player firstPlayer, Player secondPlayer, GameResultSheet gameResultSheet) {
+        String gestureChosenByFirstPlayer = firstPlayer.chooseGesture();
+        String gestureChosenBySecondPlayer = secondPlayer.chooseGesture();
+
+        RoundOutcome roundOutcome = rockPaperScissorGameRule.calculateRoundOutcome(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
+        return applyRoundOutcomeToResultSheet(roundOutcome, gameResultSheet);
     }
 
     private GameResultSheet applyRoundOutcomeToResultSheet(RoundOutcome roundOutcome, GameResultSheet gameResultSheet) {
@@ -41,9 +51,5 @@ public class RockPaperScissorGameController {
         return updatedGameResultSheet;
     }
 
-    public void displayResults(RockPaperScissorGameSettings rockPaperScissorGameSettings, GameResultSheet gameResultSheet) {
-        System.out.println(rockPaperScissorGameSettings.getFirstPlayer().getPlayerName() + " wins " + gameResultSheet.getRoundsWonByFirstPlayer() + " of " + rockPaperScissorGameSettings.getNumberOfRoundsToPlay() + " rounds");
-        System.out.println(rockPaperScissorGameSettings.getSecondPlayer().getPlayerName() + " wins " + gameResultSheet.getRoundsWonBySecondPlayer() + " of " + rockPaperScissorGameSettings.getNumberOfRoundsToPlay() + " rounds");
-        System.out.println(gameResultSheet.getRoundsWithTie() + " of " + rockPaperScissorGameSettings.getNumberOfRoundsToPlay() + " were tie games");
-    }
+
 }

@@ -1,9 +1,11 @@
-package com.coderskitchen.rockpaperscissor;
+package com.coderskitchen.rockpaperscissor.game.rule;
+
+import com.coderskitchen.rockpaperscissor.game.domain.RoundOutcome;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static com.coderskitchen.rockpaperscissor.RPSGestures.*;
+import static com.coderskitchen.rockpaperscissor.game.gesture.RPSGestures.*;
 
 /**
  * Created by Peter on 15.03.2015.
@@ -28,21 +30,21 @@ public class RockPaperScissorGameRule {
         String winningGestureForSecondPlayer = "";
         switch (gestureChosenByFirstPlayer) {
             case ROCK:
-                winningGestureForSecondPlayer = SCISSOR;
+                winningGestureForSecondPlayer = PAPER;
                 break;
             case PAPER:
-                winningGestureForSecondPlayer = ROCK;
+                winningGestureForSecondPlayer = SCISSOR;
                 break;
             case SCISSOR:
-                winningGestureForSecondPlayer = PAPER;
+                winningGestureForSecondPlayer = ROCK;
                 break;
         }
         return winningGestureForSecondPlayer;
     }
 
     private void verifyInputParameter(String gestureChosenByFirstPlayer, String gestureChosenBySecondPlayer) {
-        assert KNOWN_GESTURES.contains(gestureChosenByFirstPlayer) : "Gesture " + gestureChosenByFirstPlayer + " chosen by first player unknown";
-        assert KNOWN_GESTURES.contains(gestureChosenBySecondPlayer) : "Gesture " + gestureChosenBySecondPlayer + " chosen by second player unknown";
+        assert KNOWN_GESTURES.contains(gestureChosenByFirstPlayer) : "Gesture " + gestureChosenByFirstPlayer + " chosen by first gesture unknown";
+        assert KNOWN_GESTURES.contains(gestureChosenBySecondPlayer) : "Gesture " + gestureChosenBySecondPlayer + " chosen by second gesture unknown";
     }
 
     private boolean gesturesAreTheSame(String gestureChosenByFirstPlayer, String gestureChosenBySecondPlayer) {
