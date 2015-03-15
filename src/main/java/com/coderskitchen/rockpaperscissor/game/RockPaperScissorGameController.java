@@ -11,14 +11,12 @@ import com.coderskitchen.rockpaperscissor.game.domain.RoundOutcome;
  */
 public class RockPaperScissorGameController {
 
-    public GameResultSheet playGame(RockPaperScissorGameSettings rockPaperScissorGameSettings) {
+    public GameResultSheet playGame(RockPaperScissorGameSettings rockPaperScissorGameSettings, GameResultSheet gameResultSheet) {
         Integer numberOfRoundsLeft = rockPaperScissorGameSettings.getNumberOfRoundsToPlay();
 
         RockPaperScissorGameRule rockPaperScissorGameRule = rockPaperScissorGameSettings.getRockPaperScissorGameRule();
         Player firstPlayer = rockPaperScissorGameSettings.getFirstPlayer();
         Player secondPlayer = rockPaperScissorGameSettings.getSecondPlayer();
-
-        GameResultSheet gameResultSheet = new GameResultSheet();
 
         while (numberOfRoundsLeft > 0) {
             gameResultSheet = playRound(rockPaperScissorGameRule, firstPlayer, secondPlayer, gameResultSheet);
@@ -32,24 +30,6 @@ public class RockPaperScissorGameController {
         String gestureChosenBySecondPlayer = secondPlayer.chooseGesture();
 
         RoundOutcome roundOutcome = rockPaperScissorGameRule.calculateRoundOutcome(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
-        return applyRoundOutcomeToResultSheet(roundOutcome, gameResultSheet);
+        return gameResultSheet.applyRoundOutcome(roundOutcome);
     }
-
-    private GameResultSheet applyRoundOutcomeToResultSheet(RoundOutcome roundOutcome, GameResultSheet gameResultSheet) {
-        GameResultSheet updatedGameResultSheet = null;
-        switch (roundOutcome) {
-            case TIE:
-                updatedGameResultSheet = gameResultSheet.increaseTie();
-                break;
-            case FIRST_PLAYER_WINS:
-                updatedGameResultSheet = gameResultSheet.increaseRoundsWonByFirstPlayer();
-                break;
-            case SECOND_PLAYER_WINS:
-                updatedGameResultSheet = gameResultSheet.increaseRoundsWonBySecondPlayer();
-                break;
-        }
-        return updatedGameResultSheet;
-    }
-
-
 }

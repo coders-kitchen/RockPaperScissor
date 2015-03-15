@@ -16,7 +16,7 @@ public class RockPaperScissorGameControllerTest {
     public void afterTenRoundsTheTotalOfTieAndBothPlayerWinsIsTen() throws Exception {
         RandomGestureChoosingStrategy gestureChoosingStrategy = new RandomGestureChoosingStrategy();
         RockPaperScissorGameSettings rockPaperScissorGameSettings = new RockPaperScissorGameSettings(10, new Player("1", gestureChoosingStrategy), new Player("2", gestureChoosingStrategy), new RockPaperScissorGameRule());
-        GameResultSheet play = new RockPaperScissorGameController().playGame(rockPaperScissorGameSettings);
+        GameResultSheet play = new RockPaperScissorGameController().playGame(rockPaperScissorGameSettings, new GameResultSheet());
         assertThat(play.getRoundsWonByFirstPlayer() + play.getRoundsWonBySecondPlayer() + play.getRoundsWithTie(), is(10));
     }
 }

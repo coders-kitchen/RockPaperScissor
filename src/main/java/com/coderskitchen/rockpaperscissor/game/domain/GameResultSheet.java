@@ -30,17 +30,33 @@ public class GameResultSheet {
         return roundsWithTie;
     }
 
-    public GameResultSheet increaseTie() {
+    public GameResultSheet applyRoundOutcome(RoundOutcome roundOutcome) {
+        GameResultSheet updatedGameResultSheet = null;
+        switch (roundOutcome) {
+            case TIE:
+                updatedGameResultSheet = this.increaseTie();
+                break;
+            case FIRST_PLAYER_WINS:
+                updatedGameResultSheet = this.increaseRoundsWonByFirstPlayer();
+                break;
+            case SECOND_PLAYER_WINS:
+                updatedGameResultSheet = this.increaseRoundsWonBySecondPlayer();
+                break;
+        }
+        return updatedGameResultSheet;
+    }
+
+    private GameResultSheet increaseTie() {
         int increasedTie = roundsWithTie + 1;
         return new GameResultSheet(roundsWonByFirstPlayer, roundsWonBySecondPlayer, increasedTie);
     }
 
-    public GameResultSheet increaseRoundsWonByFirstPlayer() {
+    private GameResultSheet increaseRoundsWonByFirstPlayer() {
         int increasedRoundsWonByFirstPlayer = roundsWonByFirstPlayer + 1;
         return new GameResultSheet(increasedRoundsWonByFirstPlayer, roundsWonBySecondPlayer, roundsWithTie);
     }
 
-    public GameResultSheet increaseRoundsWonBySecondPlayer() {
+    private GameResultSheet increaseRoundsWonBySecondPlayer() {
         int increasedRoundsWonBySecondPlayer = roundsWonBySecondPlayer + 1;
         return new GameResultSheet(roundsWonByFirstPlayer, increasedRoundsWonBySecondPlayer, roundsWithTie);
     }

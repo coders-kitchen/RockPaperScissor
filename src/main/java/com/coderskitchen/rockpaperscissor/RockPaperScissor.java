@@ -48,7 +48,7 @@ public class RockPaperScissor {
     }
 
     public void runGameAndDisplayResults() {
-        GameResultSheet gameResultSheet = rockPaperScissorGameController.playGame(rockPaperScissorGameSettings);
+        GameResultSheet gameResultSheet = rockPaperScissorGameController.playGame(rockPaperScissorGameSettings, new GameResultSheet());
         resultDisplayController.displayResults(rockPaperScissorGameSettings, gameResultSheet);
     }
 }
