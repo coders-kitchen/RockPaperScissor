@@ -6,7 +6,7 @@ import com.coderskitchen.rockpaperscissor.game.gesture.Gesture;
 import com.coderskitchen.rockpaperscissor.game.domain.RockPaperScissorGameSettings;
 import com.coderskitchen.rockpaperscissor.game.domain.Player;
 import com.coderskitchen.rockpaperscissor.game.gesture.RandomGestureChoosingStrategy;
-import com.coderskitchen.rockpaperscissor.game.rule.RockPaperScissorGameRule;
+import com.coderskitchen.rockpaperscissor.game.RockPaperScissorGameRule;
 
 /**
  * Created by Peter on 15.03.2015.
@@ -16,9 +16,10 @@ public class RockPaperScissor {
     public static final int NUMBER_OF_ROUNDS = 100;
     public static final String PAPER_ONLY_PLAYER_NAME = "A";
     public static final String RANDOM_GESTURE_PLAYER_NAME = "B";
+
     private RockPaperScissorGameSettings rockPaperScissorGameSettings;
     private RockPaperScissorGameController rockPaperScissorGameController;
-    private ResultDisplayController resultDisplayController;
+    private GameResultDisplayController gameResultDisplayController;
 
     public static void main(String[] args) {
         RockPaperScissor rockPaperScissor = new RockPaperScissor();
@@ -27,13 +28,12 @@ public class RockPaperScissor {
     }
 
     public void setup() {
-        RockPaperScissorGameRule rockPaperScissorGameRule = new RockPaperScissorGameRule();
-        rockPaperScissorGameController = new RockPaperScissorGameController(rockPaperScissorGameRule);
-        resultDisplayController = new ResultDisplayController();
+        rockPaperScissorGameController = new RockPaperScissorGameController(new RockPaperScissorGameRule());
+        gameResultDisplayController = new GameResultDisplayController();
         rockPaperScissorGameSettings = buildGameSettings(NUMBER_OF_ROUNDS);
     }
 
-    private static RockPaperScissorGameSettings buildGameSettings(int numberOfRoundsToPlay) {
+    private RockPaperScissorGameSettings buildGameSettings(int numberOfRoundsToPlay) {
         Player firstPlayer = buildPaperOnlyPlayer(PAPER_ONLY_PLAYER_NAME);
         Player secondPlayer = buildRandomGesturePlayer(RANDOM_GESTURE_PLAYER_NAME);
         return new RockPaperScissorGameSettings(numberOfRoundsToPlay, firstPlayer, secondPlayer);
@@ -49,6 +49,6 @@ public class RockPaperScissor {
 
     public void runGameAndDisplayResults() {
         GameResultSheet gameResultSheet = rockPaperScissorGameController.playGame(rockPaperScissorGameSettings);
-        resultDisplayController.displayResults(rockPaperScissorGameSettings, gameResultSheet);
+        gameResultDisplayController.displayResults(rockPaperScissorGameSettings, gameResultSheet);
     }
 }

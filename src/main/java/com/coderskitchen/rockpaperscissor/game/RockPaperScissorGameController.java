@@ -4,7 +4,6 @@ import com.coderskitchen.rockpaperscissor.game.domain.GameResultSheet;
 import com.coderskitchen.rockpaperscissor.game.domain.RockPaperScissorGameSettings;
 import com.coderskitchen.rockpaperscissor.game.domain.Player;
 import com.coderskitchen.rockpaperscissor.game.gesture.Gesture;
-import com.coderskitchen.rockpaperscissor.game.rule.RockPaperScissorGameRule;
 import com.coderskitchen.rockpaperscissor.game.domain.RoundOutcome;
 
 /**
@@ -27,18 +26,17 @@ public class RockPaperScissorGameController {
         GameResultSheet gameResultSheet = new GameResultSheet();
 
         while (numberOfRoundsLeft > 0) {
-            RoundOutcome roundOutcome = playRound(rockPaperScissorGameRule, firstPlayer, secondPlayer);
+            RoundOutcome roundOutcome = playRound(firstPlayer, secondPlayer);
             gameResultSheet.applyRoundOutcome(roundOutcome);
             numberOfRoundsLeft--;
         }
         return gameResultSheet;
     }
 
-    private RoundOutcome playRound(RockPaperScissorGameRule rockPaperScissorGameRule, Player firstPlayer, Player secondPlayer) {
+    private RoundOutcome playRound(Player firstPlayer, Player secondPlayer) {
         Gesture gestureChosenByFirstPlayer = firstPlayer.chooseGesture();
         Gesture gestureChosenBySecondPlayer = secondPlayer.chooseGesture();
 
         return  rockPaperScissorGameRule.calculateRoundOutcome(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
-
     }
 }

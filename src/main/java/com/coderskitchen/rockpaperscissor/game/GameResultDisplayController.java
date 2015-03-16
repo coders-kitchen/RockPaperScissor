@@ -6,7 +6,7 @@ import com.coderskitchen.rockpaperscissor.game.domain.RockPaperScissorGameSettin
 /**
  * Created by Peter on 15.03.2015.
  */
-public class ResultDisplayController {
+public class GameResultDisplayController {
 
     public static final String PLAYER_RESULT_MESSAGE = "Player %s wins %d of %d rounds%n";
     public static final String TIE_MESSAGE = "%d of %d rounds were tie games%n";

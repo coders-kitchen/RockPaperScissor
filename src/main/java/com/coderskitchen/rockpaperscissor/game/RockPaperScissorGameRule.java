@@ -1,4 +1,4 @@
-package com.coderskitchen.rockpaperscissor.game.rule;
+package com.coderskitchen.rockpaperscissor.game;
 
 import com.coderskitchen.rockpaperscissor.game.domain.RoundOutcome;
 import com.coderskitchen.rockpaperscissor.game.gesture.Gesture;
@@ -9,19 +9,17 @@ import static com.coderskitchen.rockpaperscissor.game.gesture.Gesture.*;
  * Created by Peter on 15.03.2015.
  */
 public class RockPaperScissorGameRule {
-    public RockPaperScissorGameRule() {
-    }
 
     public RoundOutcome calculateRoundOutcome(Gesture gestureChosenByFirstPlayer, Gesture gestureChosenBySecondPlayer) {
 
         if (gesturesAreTheSame(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer)) {
             return RoundOutcome.TIE;
         }
-        Gesture winningGestureForSecondPlayer = determineWhichGestureIsWinningGestureForSecondPlayer(gestureChosenByFirstPlayer);
+        Gesture winningGestureForSecondPlayer = calculateWinningGestureForSecondPlayer(gestureChosenByFirstPlayer);
         return decideWhoWins(winningGestureForSecondPlayer, gestureChosenBySecondPlayer);
     }
 
-    private Gesture determineWhichGestureIsWinningGestureForSecondPlayer(Gesture gestureChosenByFirstPlayer) {
+    private Gesture calculateWinningGestureForSecondPlayer(Gesture gestureChosenByFirstPlayer) {
         Gesture winningGestureForSecondPlayer = null;
         switch (gestureChosenByFirstPlayer) {
             case ROCK:

@@ -1,6 +1,6 @@
 package com.coderskitchen.rockpaperscissor;
 
-import com.coderskitchen.rockpaperscissor.game.rule.RockPaperScissorGameRule;
+import com.coderskitchen.rockpaperscissor.game.RockPaperScissorGameRule;
 import com.coderskitchen.rockpaperscissor.game.domain.RoundOutcome;
 import org.junit.Test;
 

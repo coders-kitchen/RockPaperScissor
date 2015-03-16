@@ -5,7 +5,7 @@ import com.coderskitchen.rockpaperscissor.game.RockPaperScissorGameController;
 import com.coderskitchen.rockpaperscissor.game.domain.RockPaperScissorGameSettings;
 import com.coderskitchen.rockpaperscissor.game.domain.Player;
 import com.coderskitchen.rockpaperscissor.game.gesture.RandomGestureChoosingStrategy;
-import com.coderskitchen.rockpaperscissor.game.rule.RockPaperScissorGameRule;
+import com.coderskitchen.rockpaperscissor.game.RockPaperScissorGameRule;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
