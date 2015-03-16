@@ -1,11 +1,9 @@
-package com.coderskitchen.rockpaperscissor;
+package com.coderskitchen.rockpaperscissor.game;
 
 import com.coderskitchen.rockpaperscissor.game.model.GameResultSheet;
-import com.coderskitchen.rockpaperscissor.game.RockPaperScissorGameController;
 import com.coderskitchen.rockpaperscissor.game.model.RockPaperScissorGameSettings;
 import com.coderskitchen.rockpaperscissor.game.player.Player;
 import com.coderskitchen.rockpaperscissor.game.player.RandomGestureChoosingStrategy;
-import com.coderskitchen.rockpaperscissor.game.RockPaperScissorGameRule;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

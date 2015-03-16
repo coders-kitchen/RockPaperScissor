@@ -1,8 +1,5 @@
-package com.coderskitchen.rockpaperscissor;
+package com.coderskitchen.rockpaperscissor.game.player;
 
-import com.coderskitchen.rockpaperscissor.game.player.Gesture;
-import com.coderskitchen.rockpaperscissor.game.player.GestureChoosingStrategy;
-import com.coderskitchen.rockpaperscissor.game.player.Player;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -21,7 +18,7 @@ public class PlayerTest {
 
     private static class MockGestureChoosingStrategy implements GestureChoosingStrategy {
 
-        public boolean methodCalled =false;
+        public boolean methodCalled = false;
 
         @Override
         public Gesture chooseGesture() {

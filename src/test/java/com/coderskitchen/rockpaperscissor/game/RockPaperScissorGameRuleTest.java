@@ -1,6 +1,5 @@
-package com.coderskitchen.rockpaperscissor;
+package com.coderskitchen.rockpaperscissor.game;
 
-import com.coderskitchen.rockpaperscissor.game.RockPaperScissorGameRule;
 import com.coderskitchen.rockpaperscissor.game.model.RoundOutcome;
 import org.junit.Test;
 
