@@ -2,7 +2,7 @@ package com.coderskitchen.rockpaperscissor;
 
 import com.coderskitchen.rockpaperscissor.game.*;
 import com.coderskitchen.rockpaperscissor.game.domain.GameResultSheet;
-import com.coderskitchen.rockpaperscissor.game.gesture.RPSGestures;
+import com.coderskitchen.rockpaperscissor.game.gesture.Gesture;
 import com.coderskitchen.rockpaperscissor.game.domain.RockPaperScissorGameSettings;
 import com.coderskitchen.rockpaperscissor.game.domain.Player;
 import com.coderskitchen.rockpaperscissor.game.gesture.RandomGestureChoosingStrategy;
@@ -27,20 +27,20 @@ public class RockPaperScissor {
     }
 
     public void setup() {
-        rockPaperScissorGameController = new RockPaperScissorGameController();
-        resultDisplayController = new ResultDisplayController();
         RockPaperScissorGameRule rockPaperScissorGameRule = new RockPaperScissorGameRule();
-        rockPaperScissorGameSettings = buildGameSettings(NUMBER_OF_ROUNDS, rockPaperScissorGameRule);
+        rockPaperScissorGameController = new RockPaperScissorGameController(rockPaperScissorGameRule);
+        resultDisplayController = new ResultDisplayController();
+        rockPaperScissorGameSettings = buildGameSettings(NUMBER_OF_ROUNDS);
     }
 
-    private static RockPaperScissorGameSettings buildGameSettings(int numberOfRoundsToPlay, RockPaperScissorGameRule rockPaperScissorGameRule) {
+    private static RockPaperScissorGameSettings buildGameSettings(int numberOfRoundsToPlay) {
         Player firstPlayer = buildPaperOnlyPlayer(PAPER_ONLY_PLAYER_NAME);
         Player secondPlayer = buildRandomGesturePlayer(RANDOM_GESTURE_PLAYER_NAME);
-        return new RockPaperScissorGameSettings(numberOfRoundsToPlay, firstPlayer, secondPlayer, rockPaperScissorGameRule);
+        return new RockPaperScissorGameSettings(numberOfRoundsToPlay, firstPlayer, secondPlayer);
     }
 
     private static Player buildPaperOnlyPlayer(String playerName) {
-        return new Player(playerName, () -> RPSGestures.PAPER);
+        return new Player(playerName, () -> Gesture.PAPER);
     }
 
     private static Player buildRandomGesturePlayer(String playerName) {
@@ -48,7 +48,7 @@ public class RockPaperScissor {
     }
 
     public void runGameAndDisplayResults() {
-        GameResultSheet gameResultSheet = rockPaperScissorGameController.playGame(rockPaperScissorGameSettings, new GameResultSheet());
+        GameResultSheet gameResultSheet = rockPaperScissorGameController.playGame(rockPaperScissorGameSettings);
         resultDisplayController.displayResults(rockPaperScissorGameSettings, gameResultSheet);
     }
 }

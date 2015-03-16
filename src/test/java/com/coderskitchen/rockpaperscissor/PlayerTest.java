@@ -1,5 +1,6 @@
 package com.coderskitchen.rockpaperscissor;
 
+import com.coderskitchen.rockpaperscissor.game.gesture.Gesture;
 import com.coderskitchen.rockpaperscissor.game.gesture.GestureChoosingStrategy;
 import com.coderskitchen.rockpaperscissor.game.domain.Player;
 import org.junit.Test;
@@ -23,9 +24,9 @@ public class PlayerTest {
         public boolean methodCalled =false;
 
         @Override
-        public String chooseGesture() {
+        public Gesture chooseGesture() {
             methodCalled = true;
-            return "";
+            return Gesture.ROCK;
         }
     }
 }

@@ -1,33 +1,28 @@
 package com.coderskitchen.rockpaperscissor.game.rule;
 
 import com.coderskitchen.rockpaperscissor.game.domain.RoundOutcome;
+import com.coderskitchen.rockpaperscissor.game.gesture.Gesture;
 
-import java.util.Arrays;
-import java.util.List;
-
-import static com.coderskitchen.rockpaperscissor.game.gesture.RPSGestures.*;
+import static com.coderskitchen.rockpaperscissor.game.gesture.Gesture.*;
 
 /**
  * Created by Peter on 15.03.2015.
  */
 public class RockPaperScissorGameRule {
-    private static final List<String> KNOWN_GESTURES = Arrays.asList(ROCK, PAPER, SCISSOR);
-
     public RockPaperScissorGameRule() {
     }
 
-    public RoundOutcome calculateRoundOutcome(String gestureChosenByFirstPlayer, String gestureChosenBySecondPlayer) {
-        verifyInputParameter(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
+    public RoundOutcome calculateRoundOutcome(Gesture gestureChosenByFirstPlayer, Gesture gestureChosenBySecondPlayer) {
 
         if (gesturesAreTheSame(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer)) {
             return RoundOutcome.TIE;
         }
-        String winningGestureForSecondPlayer = determineWhichGestureIsWinningGestureForSecondPlayer(gestureChosenByFirstPlayer);
+        Gesture winningGestureForSecondPlayer = determineWhichGestureIsWinningGestureForSecondPlayer(gestureChosenByFirstPlayer);
         return decideWhoWins(winningGestureForSecondPlayer, gestureChosenBySecondPlayer);
     }
 
-    private String determineWhichGestureIsWinningGestureForSecondPlayer(String gestureChosenByFirstPlayer) {
-        String winningGestureForSecondPlayer = "";
+    private Gesture determineWhichGestureIsWinningGestureForSecondPlayer(Gesture gestureChosenByFirstPlayer) {
+        Gesture winningGestureForSecondPlayer = null;
         switch (gestureChosenByFirstPlayer) {
             case ROCK:
                 winningGestureForSecondPlayer = PAPER;
@@ -42,16 +37,11 @@ public class RockPaperScissorGameRule {
         return winningGestureForSecondPlayer;
     }
 
-    private void verifyInputParameter(String gestureChosenByFirstPlayer, String gestureChosenBySecondPlayer) {
-        assert KNOWN_GESTURES.contains(gestureChosenByFirstPlayer) : "Gesture " + gestureChosenByFirstPlayer + " chosen by first gesture unknown";
-        assert KNOWN_GESTURES.contains(gestureChosenBySecondPlayer) : "Gesture " + gestureChosenBySecondPlayer + " chosen by second gesture unknown";
+    private boolean gesturesAreTheSame(Gesture gestureChosenByFirstPlayer, Gesture gestureChosenBySecondPlayer) {
+        return gestureChosenByFirstPlayer == gestureChosenBySecondPlayer;
     }
 
-    private boolean gesturesAreTheSame(String gestureChosenByFirstPlayer, String gestureChosenBySecondPlayer) {
-        return gestureChosenByFirstPlayer.equalsIgnoreCase(gestureChosenBySecondPlayer);
-    }
-
-    private RoundOutcome decideWhoWins(String winningGesture, String gestureChosenBySecondPlayer) {
+    private RoundOutcome decideWhoWins(Gesture winningGesture, Gesture gestureChosenBySecondPlayer) {
         if (gesturesAreTheSame(winningGesture, gestureChosenBySecondPlayer)) {
             return RoundOutcome.SECOND_PLAYER_WINS;
         } else {

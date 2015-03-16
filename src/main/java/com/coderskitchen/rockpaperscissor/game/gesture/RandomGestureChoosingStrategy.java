@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class RandomGestureChoosingStrategy implements GestureChoosingStrategy {
     @Override
-    public String chooseGesture() {
-        List<String> gestures = Arrays.asList(RPSGestures.ROCK, RPSGestures.PAPER, RPSGestures.SCISSOR);
+    public Gesture chooseGesture() {
+        List<Gesture> gestures = Arrays.asList(Gesture.values());
         Collections.shuffle(gestures);
         return gestures.get(0);
     }

@@ -4,19 +4,9 @@ package com.coderskitchen.rockpaperscissor.game.domain;
  * Created by Peter on 15.03.2015.
  */
 public class GameResultSheet {
-    private final Integer roundsWonByFirstPlayer;
-    private final Integer roundsWonBySecondPlayer;
-    private final Integer roundsWithTie;
-
-    public GameResultSheet() {
-        this(0,0,0);
-    }
-
-    public GameResultSheet(Integer roundsWonByFirstPlayer, Integer roundsWonBySecondPlayer, Integer roundsWithTie) {
-        this.roundsWonByFirstPlayer = roundsWonByFirstPlayer;
-        this.roundsWonBySecondPlayer = roundsWonBySecondPlayer;
-        this.roundsWithTie = roundsWithTie;
-    }
+    private Integer roundsWonByFirstPlayer = 0;
+    private Integer roundsWonBySecondPlayer = 0;
+    private Integer roundsWithTie = 0;
 
     public Integer getRoundsWonByFirstPlayer() {
         return roundsWonByFirstPlayer;
@@ -30,34 +20,29 @@ public class GameResultSheet {
         return roundsWithTie;
     }
 
-    public GameResultSheet applyRoundOutcome(RoundOutcome roundOutcome) {
-        GameResultSheet updatedGameResultSheet = null;
+    public void applyRoundOutcome(RoundOutcome roundOutcome) {
         switch (roundOutcome) {
             case TIE:
-                updatedGameResultSheet = this.increaseTie();
+                this.increaseTie();
                 break;
             case FIRST_PLAYER_WINS:
-                updatedGameResultSheet = this.increaseRoundsWonByFirstPlayer();
+                this.increaseRoundsWonByFirstPlayer();
                 break;
             case SECOND_PLAYER_WINS:
-                updatedGameResultSheet = this.increaseRoundsWonBySecondPlayer();
+                this.increaseRoundsWonBySecondPlayer();
                 break;
         }
-        return updatedGameResultSheet;
     }
 
-    private GameResultSheet increaseTie() {
-        int increasedTie = roundsWithTie + 1;
-        return new GameResultSheet(roundsWonByFirstPlayer, roundsWonBySecondPlayer, increasedTie);
+    private void increaseTie() {
+        roundsWithTie++;
     }
 
-    private GameResultSheet increaseRoundsWonByFirstPlayer() {
-        int increasedRoundsWonByFirstPlayer = roundsWonByFirstPlayer + 1;
-        return new GameResultSheet(increasedRoundsWonByFirstPlayer, roundsWonBySecondPlayer, roundsWithTie);
+    private void increaseRoundsWonByFirstPlayer() {
+        roundsWonByFirstPlayer++;
     }
 
-    private GameResultSheet increaseRoundsWonBySecondPlayer() {
-        int increasedRoundsWonBySecondPlayer = roundsWonBySecondPlayer + 1;
-        return new GameResultSheet(roundsWonByFirstPlayer, increasedRoundsWonBySecondPlayer, roundsWithTie);
+    private void increaseRoundsWonBySecondPlayer() {
+        roundsWonBySecondPlayer++;
     }
 }

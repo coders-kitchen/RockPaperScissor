@@ -1,5 +1,6 @@
 package com.coderskitchen.rockpaperscissor.game.domain;
 
+import com.coderskitchen.rockpaperscissor.game.gesture.Gesture;
 import com.coderskitchen.rockpaperscissor.game.gesture.GestureChoosingStrategy;
 
 /**
@@ -14,7 +15,7 @@ public class Player {
         this.gestureChoosingStrategy = gestureChoosingStrategy;
     }
 
-    public String chooseGesture() {
+    public Gesture chooseGesture() {
         return gestureChoosingStrategy.chooseGesture();
     }
 
