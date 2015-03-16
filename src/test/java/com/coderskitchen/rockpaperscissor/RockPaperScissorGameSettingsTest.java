@@ -2,7 +2,7 @@ package com.coderskitchen.rockpaperscissor;
 
 import com.coderskitchen.rockpaperscissor.game.domain.RockPaperScissorGameSettings;
 import com.coderskitchen.rockpaperscissor.game.domain.Player;
-import com.coderskitchen.rockpaperscissor.game.gesture.Gesture;
+import com.coderskitchen.rockpaperscissor.game.domain.Gesture;
 import org.junit.Test;
 
 public class RockPaperScissorGameSettingsTest {

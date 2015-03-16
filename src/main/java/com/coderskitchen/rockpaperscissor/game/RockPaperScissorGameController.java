@@ -1,10 +1,6 @@
 package com.coderskitchen.rockpaperscissor.game;
 
-import com.coderskitchen.rockpaperscissor.game.domain.GameResultSheet;
-import com.coderskitchen.rockpaperscissor.game.domain.RockPaperScissorGameSettings;
-import com.coderskitchen.rockpaperscissor.game.domain.Player;
-import com.coderskitchen.rockpaperscissor.game.gesture.Gesture;
-import com.coderskitchen.rockpaperscissor.game.domain.RoundOutcome;
+import com.coderskitchen.rockpaperscissor.game.domain.*;
 
 /**
  * Created by Peter on 15.03.2015.

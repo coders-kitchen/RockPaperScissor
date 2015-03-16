@@ -1,5 +1,7 @@
 package com.coderskitchen.rockpaperscissor.game.gesture;
 
+import com.coderskitchen.rockpaperscissor.game.domain.Gesture;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
