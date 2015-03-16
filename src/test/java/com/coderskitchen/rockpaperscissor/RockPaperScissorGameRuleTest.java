@@ -1,10 +1,10 @@
 package com.coderskitchen.rockpaperscissor;
 
 import com.coderskitchen.rockpaperscissor.game.RockPaperScissorGameRule;
-import com.coderskitchen.rockpaperscissor.game.domain.RoundOutcome;
+import com.coderskitchen.rockpaperscissor.game.model.RoundOutcome;
 import org.junit.Test;
 
-import static com.coderskitchen.rockpaperscissor.game.domain.Gesture.*;
+import static com.coderskitchen.rockpaperscissor.game.model.Gesture.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 

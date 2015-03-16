@@ -1,4 +1,4 @@
-package com.coderskitchen.rockpaperscissor.game.domain;
+package com.coderskitchen.rockpaperscissor.game.model;
 
 import com.coderskitchen.rockpaperscissor.game.gesture.GestureChoosingStrategy;
 

@@ -1,8 +1,8 @@
 package com.coderskitchen.rockpaperscissor;
 
-import com.coderskitchen.rockpaperscissor.game.domain.Gesture;
+import com.coderskitchen.rockpaperscissor.game.model.Gesture;
 import com.coderskitchen.rockpaperscissor.game.gesture.GestureChoosingStrategy;
-import com.coderskitchen.rockpaperscissor.game.domain.Player;
+import com.coderskitchen.rockpaperscissor.game.model.Player;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
