@@ -3,8 +3,8 @@ package com.coderskitchen.rockpaperscissor;
 import com.coderskitchen.rockpaperscissor.game.model.GameResultSheet;
 import com.coderskitchen.rockpaperscissor.game.RockPaperScissorGameController;
 import com.coderskitchen.rockpaperscissor.game.model.RockPaperScissorGameSettings;
-import com.coderskitchen.rockpaperscissor.game.model.Player;
-import com.coderskitchen.rockpaperscissor.game.gesture.RandomGestureChoosingStrategy;
+import com.coderskitchen.rockpaperscissor.game.player.Player;
+import com.coderskitchen.rockpaperscissor.game.player.RandomGestureChoosingStrategy;
 import com.coderskitchen.rockpaperscissor.game.RockPaperScissorGameRule;
 import org.junit.Test;
 

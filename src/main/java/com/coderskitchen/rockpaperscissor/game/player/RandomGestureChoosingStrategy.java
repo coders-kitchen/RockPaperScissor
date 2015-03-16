@@ -1,6 +1,4 @@
-package com.coderskitchen.rockpaperscissor.game.gesture;
-
-import com.coderskitchen.rockpaperscissor.game.model.Gesture;
+package com.coderskitchen.rockpaperscissor.game.player;
 
 import java.util.Arrays;
 import java.util.Collections;

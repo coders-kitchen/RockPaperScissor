@@ -1,9 +1,9 @@
 package com.coderskitchen.rockpaperscissor.game;
 
-import com.coderskitchen.rockpaperscissor.game.model.Gesture;
+import com.coderskitchen.rockpaperscissor.game.player.Gesture;
 import com.coderskitchen.rockpaperscissor.game.model.RoundOutcome;
 
-import static com.coderskitchen.rockpaperscissor.game.model.Gesture.*;
+import static com.coderskitchen.rockpaperscissor.game.player.Gesture.*;
 
 /**
  * Created by Peter on 15.03.2015.
