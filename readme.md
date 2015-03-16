@@ -44,3 +44,8 @@ For running RPS execute
 For running the tests execute
 
     ./gradlew test
+
+
+## Open tasks
+
+Add documentation to methods / classes
