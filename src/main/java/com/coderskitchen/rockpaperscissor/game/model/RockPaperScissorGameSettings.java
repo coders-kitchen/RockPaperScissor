@@ -12,8 +12,8 @@ public class RockPaperScissorGameSettings {
 
     public RockPaperScissorGameSettings(Integer numberOfRoundsToPlay, Player firstPlayer, Player secondPlayer) {
         assert numberOfRoundsToPlay > 0 : "Number of rounds to runGameAndDisplayResults must be greater than 0";
-        assert firstPlayer != null : "First gesture must be not null";
-        assert secondPlayer != null : "Second gesture must be not null";
+        assert firstPlayer != null : "First player must be not null";
+        assert secondPlayer != null : "Second player must be not null";
 
         this.numberOfRoundsToPlay = numberOfRoundsToPlay;
         this.firstPlayer = firstPlayer;
