@@ -2,9 +2,9 @@ package com.coderskitchen.rockpaperscissor;
 
 import org.junit.Test;
 
-public class RockPaperScissorTest {
+public class RockPaperScissorApplicationTest {
     @Test
     public void runGame() throws Exception {
-        RockPaperScissor.main(null);
+        RockPaperScissorApplication.main(null);
     }
 }

@@ -5,12 +5,12 @@ import com.coderskitchen.rockpaperscissor.game.player.Player;
 /**
  * Created by Peter on 15.03.2015.
  */
-public class RockPaperScissorGameSettings {
+public class GameSettings {
     private final Integer numberOfRoundsToPlay;
     private final Player firstPlayer;
     private final Player secondPlayer;
 
-    public RockPaperScissorGameSettings(Integer numberOfRoundsToPlay, Player firstPlayer, Player secondPlayer) {
+    public GameSettings(Integer numberOfRoundsToPlay, Player firstPlayer, Player secondPlayer) {
         assert numberOfRoundsToPlay > 0 : "Number of rounds to runGameAndDisplayResults must be greater than 0";
         assert firstPlayer != null : "First player must be not null";
         assert secondPlayer != null : "Second player must be not null";

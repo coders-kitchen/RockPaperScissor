@@ -7,19 +7,19 @@ import com.coderskitchen.rockpaperscissor.game.player.Player;
 /**
  * Created by Peter on 15.03.2015.
  */
-public class RockPaperScissorGameService {
+public class GameEngine {
 
-    private final RockPaperScissorGameRule rockPaperScissorGameRule;
+    private final GameRule gameRule;
 
-    public RockPaperScissorGameService(RockPaperScissorGameRule rockPaperScissorGameRule) {
-        this.rockPaperScissorGameRule = rockPaperScissorGameRule;
+    public GameEngine(GameRule gameRule) {
+        this.gameRule = gameRule;
     }
 
-    public GameResultSheet playGame(RockPaperScissorGameSettings rockPaperScissorGameSettings) {
-        Integer numberOfRoundsLeft = rockPaperScissorGameSettings.getNumberOfRoundsToPlay();
+    public GameResultSheet playGame(GameSettings gameSettings) {
+        Integer numberOfRoundsLeft = gameSettings.getNumberOfRoundsToPlay();
 
-        Player firstPlayer = rockPaperScissorGameSettings.getFirstPlayer();
-        Player secondPlayer = rockPaperScissorGameSettings.getSecondPlayer();
+        Player firstPlayer = gameSettings.getFirstPlayer();
+        Player secondPlayer = gameSettings.getSecondPlayer();
 
         GameResultSheet gameResultSheet = new GameResultSheet();
 
@@ -35,6 +35,6 @@ public class RockPaperScissorGameService {
         Gesture gestureChosenByFirstPlayer = firstPlayer.chooseGesture();
         Gesture gestureChosenBySecondPlayer = secondPlayer.chooseGesture();
 
-        return  rockPaperScissorGameRule.calculateRoundOutcome(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
+        return  gameRule.calculateRoundOutcome(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
     }
 }

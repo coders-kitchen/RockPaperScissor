@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "com.coderskitchen.rockpaperscissor.RockPaperScissor"
+mainClassName = "com.coderskitchen.rockpaperscissor.RockPaperScissorApplication"
 
 sourceCompatibility = 1.8
 version = '1.0'
