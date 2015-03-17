@@ -1,7 +1,7 @@
 package com.coderskitchen.rockpaperscissor.game;
 
-import com.coderskitchen.rockpaperscissor.player.Player;
-import com.coderskitchen.rockpaperscissor.player.RandomGestureChoosingStrategy;
+import com.coderskitchen.rockpaperscissor.game.player.Player;
+import com.coderskitchen.rockpaperscissor.game.player.RandomGestureChoosingStrategy;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

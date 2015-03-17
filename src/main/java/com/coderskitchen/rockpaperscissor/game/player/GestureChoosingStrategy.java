@@ -1,4 +1,4 @@
-package com.coderskitchen.rockpaperscissor.player;
+package com.coderskitchen.rockpaperscissor.game.player;
 
 /**
  * Created by Peter on 15.03.2015.

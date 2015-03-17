@@ -1,8 +1,8 @@
 package com.coderskitchen.rockpaperscissor.game;
 
-import com.coderskitchen.rockpaperscissor.player.Gesture;
+import com.coderskitchen.rockpaperscissor.game.player.Gesture;
 
-import static com.coderskitchen.rockpaperscissor.player.Gesture.*;
+import static com.coderskitchen.rockpaperscissor.game.player.Gesture.*;
 
 /**
  * Created by Peter on 15.03.2015.

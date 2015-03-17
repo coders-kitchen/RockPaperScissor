@@ -2,7 +2,7 @@ package com.coderskitchen.rockpaperscissor.game;
 
 import org.junit.Test;
 
-import static com.coderskitchen.rockpaperscissor.player.Gesture.*;
+import static com.coderskitchen.rockpaperscissor.game.player.Gesture.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
