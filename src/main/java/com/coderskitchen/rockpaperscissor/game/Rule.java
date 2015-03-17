@@ -7,7 +7,7 @@ import static com.coderskitchen.rockpaperscissor.player.Gesture.*;
 /**
  * Created by Peter on 15.03.2015.
  */
-public class GameRule {
+public class Rule {
 
     public RoundOutcome calculateRoundOutcome(Gesture gestureChosenByFirstPlayer, Gesture gestureChosenBySecondPlayer) {
 

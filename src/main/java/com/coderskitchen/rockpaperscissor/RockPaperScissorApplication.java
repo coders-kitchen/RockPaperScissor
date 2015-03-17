@@ -1,12 +1,12 @@
 package com.coderskitchen.rockpaperscissor;
 
 import com.coderskitchen.rockpaperscissor.game.*;
-import com.coderskitchen.rockpaperscissor.game.GameResultSheet;
+import com.coderskitchen.rockpaperscissor.game.ResultSheet;
 import com.coderskitchen.rockpaperscissor.player.Gesture;
-import com.coderskitchen.rockpaperscissor.game.GameSettings;
+import com.coderskitchen.rockpaperscissor.game.Settings;
 import com.coderskitchen.rockpaperscissor.player.Player;
 import com.coderskitchen.rockpaperscissor.player.RandomGestureChoosingStrategy;
-import com.coderskitchen.rockpaperscissor.game.GameRule;
+import com.coderskitchen.rockpaperscissor.game.Rule;
 
 /**
  * Created by Peter on 15.03.2015.
@@ -17,9 +17,9 @@ public class RockPaperScissorApplication {
     public static final String PAPER_ONLY_PLAYER_NAME = "PAPER ONLY";
     public static final String RANDOM_GESTURE_PLAYER_NAME = "RANDOM";
 
-    private GameSettings gameSettings;
+    private Settings settings;
     private GameEngine gameEngine;
-    private GameResultDisplayController gameResultDisplayController;
+    private ResultDisplayController resultDisplayController;
 
     public static void main(String[] args) {
         RockPaperScissorApplication rockPaperScissorApplication = new RockPaperScissorApplication();
@@ -28,15 +28,15 @@ public class RockPaperScissorApplication {
     }
 
     public void setup() {
-        gameEngine = new GameEngine(new GameRule());
-        gameResultDisplayController = new GameResultDisplayController();
-        gameSettings = buildGameSettings();
+        gameEngine = new GameEngine(new Rule());
+        resultDisplayController = new ResultDisplayController();
+        settings = buildGameSettings();
     }
 
-    private GameSettings buildGameSettings() {
+    private Settings buildGameSettings() {
         Player firstPlayer = buildPaperOnlyPlayer();
         Player secondPlayer = buildRandomGesturePlayer();
-        return new GameSettings(NUMBER_OF_ROUNDS, firstPlayer, secondPlayer);
+        return new Settings(NUMBER_OF_ROUNDS, firstPlayer, secondPlayer);
     }
 
     private static Player buildPaperOnlyPlayer() {
@@ -48,7 +48,7 @@ public class RockPaperScissorApplication {
     }
 
     public void runGameAndDisplayResults() {
-        GameResultSheet gameResultSheet = gameEngine.playGame(gameSettings);
-        gameResultDisplayController.displayResults(gameSettings, gameResultSheet);
+        ResultSheet resultSheet = gameEngine.playGame(settings);
+        resultDisplayController.displayResults(settings, resultSheet);
     }
 }

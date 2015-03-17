@@ -11,8 +11,8 @@ public class GameEngineTest {
     @Test
     public void afterTenRoundsTheTotalOfTieAndBothPlayerWinsIsTen() throws Exception {
         RandomGestureChoosingStrategy gestureChoosingStrategy = new RandomGestureChoosingStrategy();
-        GameSettings gameSettings = new GameSettings(10, new Player("1", gestureChoosingStrategy), new Player("2", gestureChoosingStrategy));
-        GameResultSheet play = new GameEngine(new GameRule()).playGame(gameSettings);
+        Settings settings = new Settings(10, new Player("1", gestureChoosingStrategy), new Player("2", gestureChoosingStrategy));
+        ResultSheet play = new GameEngine(new Rule()).playGame(settings);
         assertThat(play.getRoundsWonByFirstPlayer() + play.getRoundsWonBySecondPlayer() + play.getRoundsWithTie(), is(10));
     }
 }

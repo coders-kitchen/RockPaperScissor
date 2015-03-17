@@ -3,7 +3,7 @@ package com.coderskitchen.rockpaperscissor.game;
 /**
  * Created by Peter on 15.03.2015.
  */
-public class GameResultSheet {
+public class ResultSheet {
     private Integer roundsWonByFirstPlayer = 0;
     private Integer roundsWonBySecondPlayer = 0;
     private Integer roundsWithTie = 0;

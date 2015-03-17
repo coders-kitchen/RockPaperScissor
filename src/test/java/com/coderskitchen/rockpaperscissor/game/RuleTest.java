@@ -6,37 +6,37 @@ import static com.coderskitchen.rockpaperscissor.player.Gesture.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class GameRuleTest {
+public class RuleTest {
 
-    private final GameRule gameRule = new GameRule();
+    private final Rule rule = new Rule();
 
     @Test
     public void sameGestureOfBothPlayersResultsInTie() throws Exception {
-        RoundOutcome roundOutcome = gameRule.calculateRoundOutcome(PAPER, PAPER);
+        RoundOutcome roundOutcome = rule.calculateRoundOutcome(PAPER, PAPER);
         assertThat(roundOutcome, is(RoundOutcome.TIE));
     }
 
     @Test
     public void rockIsBeatenByPaper() throws Exception {
-        RoundOutcome roundOutcome = gameRule.calculateRoundOutcome(ROCK, PAPER);
+        RoundOutcome roundOutcome = rule.calculateRoundOutcome(ROCK, PAPER);
         assertThat(roundOutcome, is(RoundOutcome.SECOND_PLAYER_WINS));
-        roundOutcome = gameRule.calculateRoundOutcome(PAPER, ROCK);
+        roundOutcome = rule.calculateRoundOutcome(PAPER, ROCK);
         assertThat(roundOutcome, is(RoundOutcome.FIRST_PLAYER_WINS));
     }
 
     @Test
     public void paperIsBeatenByScissor() throws Exception {
-        RoundOutcome roundOutcome = gameRule.calculateRoundOutcome(PAPER, SCISSOR);
+        RoundOutcome roundOutcome = rule.calculateRoundOutcome(PAPER, SCISSOR);
         assertThat(roundOutcome, is(RoundOutcome.SECOND_PLAYER_WINS));
-        roundOutcome = gameRule.calculateRoundOutcome(SCISSOR, PAPER);
+        roundOutcome = rule.calculateRoundOutcome(SCISSOR, PAPER);
         assertThat(roundOutcome, is(RoundOutcome.FIRST_PLAYER_WINS));
     }
 
     @Test
     public void scissorIsBeatenByRock() throws Exception {
-        RoundOutcome roundOutcome = gameRule.calculateRoundOutcome(SCISSOR, ROCK);
+        RoundOutcome roundOutcome = rule.calculateRoundOutcome(SCISSOR, ROCK);
         assertThat(roundOutcome, is(RoundOutcome.SECOND_PLAYER_WINS));
-        roundOutcome = gameRule.calculateRoundOutcome(ROCK, SCISSOR);
+        roundOutcome = rule.calculateRoundOutcome(ROCK, SCISSOR);
         assertThat(roundOutcome, is(RoundOutcome.FIRST_PLAYER_WINS));
     }
 }

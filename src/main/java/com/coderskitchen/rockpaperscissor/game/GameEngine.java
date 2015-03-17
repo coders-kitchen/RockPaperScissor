@@ -8,32 +8,32 @@ import com.coderskitchen.rockpaperscissor.player.Player;
  */
 public class GameEngine {
 
-    private final GameRule gameRule;
+    private final Rule rule;
 
-    public GameEngine(GameRule gameRule) {
-        this.gameRule = gameRule;
+    public GameEngine(Rule rule) {
+        this.rule = rule;
     }
 
-    public GameResultSheet playGame(GameSettings gameSettings) {
-        Integer numberOfRoundsLeft = gameSettings.getNumberOfRoundsToPlay();
+    public ResultSheet playGame(Settings settings) {
+        Integer numberOfRoundsLeft = settings.getNumberOfRoundsToPlay();
 
-        Player firstPlayer = gameSettings.getFirstPlayer();
-        Player secondPlayer = gameSettings.getSecondPlayer();
+        Player firstPlayer = settings.getFirstPlayer();
+        Player secondPlayer = settings.getSecondPlayer();
 
-        GameResultSheet gameResultSheet = new GameResultSheet();
+        ResultSheet resultSheet = new ResultSheet();
 
         while (numberOfRoundsLeft > 0) {
             RoundOutcome roundOutcome = playRound(firstPlayer, secondPlayer);
-            gameResultSheet.applyRoundOutcome(roundOutcome);
+            resultSheet.applyRoundOutcome(roundOutcome);
             numberOfRoundsLeft--;
         }
-        return gameResultSheet;
+        return resultSheet;
     }
 
     private RoundOutcome playRound(Player firstPlayer, Player secondPlayer) {
         Gesture gestureChosenByFirstPlayer = firstPlayer.chooseGesture();
         Gesture gestureChosenBySecondPlayer = secondPlayer.chooseGesture();
 
-        return  gameRule.calculateRoundOutcome(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
+        return  rule.calculateRoundOutcome(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
     }
 }
