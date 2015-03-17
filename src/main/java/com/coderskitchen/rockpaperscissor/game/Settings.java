@@ -11,13 +11,25 @@ public class Settings {
     private final Player secondPlayer;
 
     public Settings(Integer numberOfRoundsToPlay, Player firstPlayer, Player secondPlayer) {
-        assert numberOfRoundsToPlay > 0 : "Number of rounds to runGameAndDisplayResults must be greater than 0";
-        assert firstPlayer != null : "First player must be not null";
-        assert secondPlayer != null : "Second player must be not null";
+        verifyThatNumberOfRoundsIsGreaterThanZero(numberOfRoundsToPlay);
+        verifyThatPlayerIsNotNull(firstPlayer, "First");
+        verifyThatPlayerIsNotNull(secondPlayer, "Second");
 
         this.numberOfRoundsToPlay = numberOfRoundsToPlay;
         this.firstPlayer = firstPlayer;
         this.secondPlayer = secondPlayer;
+    }
+
+    private void verifyThatNumberOfRoundsIsGreaterThanZero(Integer numberOfRoundsToPlay) {
+        if (numberOfRoundsToPlay <= 0) {
+            throw new IllegalArgumentException("Number of rounds to runGameAndDisplayResults must be greater than 0");
+        }
+    }
+
+    private void verifyThatPlayerIsNotNull(Player player, String playerPosition) {
+        if (player == null) {
+            throw new IllegalArgumentException(playerPosition + " player must be not null");
+        }
     }
 
     public Integer getNumberOfRoundsToPlay() {
