@@ -14,8 +14,8 @@ import com.coderskitchen.rockpaperscissor.game.GameRule;
 public class RockPaperScissorApplication {
 
     public static final int NUMBER_OF_ROUNDS = 100;
-    public static final String PAPER_ONLY_PLAYER_NAME = "A";
-    public static final String RANDOM_GESTURE_PLAYER_NAME = "B";
+    public static final String PAPER_ONLY_PLAYER_NAME = "PAPER ONLY";
+    public static final String RANDOM_GESTURE_PLAYER_NAME = "RANDOM";
 
     private GameSettings gameSettings;
     private GameEngine gameEngine;
