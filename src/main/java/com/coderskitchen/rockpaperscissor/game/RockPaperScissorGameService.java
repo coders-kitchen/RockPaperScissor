@@ -7,11 +7,11 @@ import com.coderskitchen.rockpaperscissor.game.player.Player;
 /**
  * Created by Peter on 15.03.2015.
  */
-public class RockPaperScissorGameController {
+public class RockPaperScissorGameService {
 
     private final RockPaperScissorGameRule rockPaperScissorGameRule;
 
-    public RockPaperScissorGameController(RockPaperScissorGameRule rockPaperScissorGameRule) {
+    public RockPaperScissorGameService(RockPaperScissorGameRule rockPaperScissorGameRule) {
         this.rockPaperScissorGameRule = rockPaperScissorGameRule;
     }
 

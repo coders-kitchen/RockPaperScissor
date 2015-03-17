@@ -18,7 +18,7 @@ public class RockPaperScissor {
     public static final String RANDOM_GESTURE_PLAYER_NAME = "B";
 
     private RockPaperScissorGameSettings rockPaperScissorGameSettings;
-    private RockPaperScissorGameController rockPaperScissorGameController;
+    private RockPaperScissorGameService rockPaperScissorGameService;
     private GameResultDisplayController gameResultDisplayController;
 
     public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class RockPaperScissor {
     }
 
     public void setup() {
-        rockPaperScissorGameController = new RockPaperScissorGameController(new RockPaperScissorGameRule());
+        rockPaperScissorGameService = new RockPaperScissorGameService(new RockPaperScissorGameRule());
         gameResultDisplayController = new GameResultDisplayController();
         rockPaperScissorGameSettings = buildGameSettings(NUMBER_OF_ROUNDS);
     }
@@ -48,7 +48,7 @@ public class RockPaperScissor {
     }
 
     public void runGameAndDisplayResults() {
-        GameResultSheet gameResultSheet = rockPaperScissorGameController.playGame(rockPaperScissorGameSettings);
+        GameResultSheet gameResultSheet = rockPaperScissorGameService.playGame(rockPaperScissorGameSettings);
         gameResultDisplayController.displayResults(rockPaperScissorGameSettings, gameResultSheet);
     }
 }

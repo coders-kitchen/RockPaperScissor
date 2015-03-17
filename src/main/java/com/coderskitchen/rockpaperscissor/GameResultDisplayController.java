@@ -1,4 +1,4 @@
-package com.coderskitchen.rockpaperscissor.game;
+package com.coderskitchen.rockpaperscissor;
 
 import com.coderskitchen.rockpaperscissor.game.model.GameResultSheet;
 import com.coderskitchen.rockpaperscissor.game.model.RockPaperScissorGameSettings;
