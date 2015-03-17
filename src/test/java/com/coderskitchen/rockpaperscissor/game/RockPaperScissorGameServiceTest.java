@@ -9,12 +9,12 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class RockPaperScissorGameControllerTest {
+public class RockPaperScissorGameServiceTest {
     @Test
     public void afterTenRoundsTheTotalOfTieAndBothPlayerWinsIsTen() throws Exception {
         RandomGestureChoosingStrategy gestureChoosingStrategy = new RandomGestureChoosingStrategy();
         RockPaperScissorGameSettings rockPaperScissorGameSettings = new RockPaperScissorGameSettings(10, new Player("1", gestureChoosingStrategy), new Player("2", gestureChoosingStrategy));
-        GameResultSheet play = new RockPaperScissorGameController(new RockPaperScissorGameRule()).playGame(rockPaperScissorGameSettings);
+        GameResultSheet play = new RockPaperScissorGameService(new RockPaperScissorGameRule()).playGame(rockPaperScissorGameSettings);
         assertThat(play.getRoundsWonByFirstPlayer() + play.getRoundsWonBySecondPlayer() + play.getRoundsWithTie(), is(10));
     }
 }
