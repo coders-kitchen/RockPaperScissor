@@ -1,4 +1,4 @@
-package com.coderskitchen.rockpaperscissor.game.player;
+package com.coderskitchen.rockpaperscissor.player;
 
 import java.util.Random;
 

@@ -1,7 +1,7 @@
 package com.coderskitchen.rockpaperscissor.game.model;
 
-import com.coderskitchen.rockpaperscissor.game.player.Gesture;
-import com.coderskitchen.rockpaperscissor.game.player.Player;
+import com.coderskitchen.rockpaperscissor.player.Gesture;
+import com.coderskitchen.rockpaperscissor.player.Player;
 import org.junit.Test;
 
 public class GameSettingsTest {
