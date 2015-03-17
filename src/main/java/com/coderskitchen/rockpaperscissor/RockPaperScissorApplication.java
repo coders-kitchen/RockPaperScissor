@@ -1,9 +1,9 @@
 package com.coderskitchen.rockpaperscissor;
 
 import com.coderskitchen.rockpaperscissor.game.*;
-import com.coderskitchen.rockpaperscissor.game.model.GameResultSheet;
+import com.coderskitchen.rockpaperscissor.game.GameResultSheet;
 import com.coderskitchen.rockpaperscissor.player.Gesture;
-import com.coderskitchen.rockpaperscissor.game.model.GameSettings;
+import com.coderskitchen.rockpaperscissor.game.GameSettings;
 import com.coderskitchen.rockpaperscissor.player.Player;
 import com.coderskitchen.rockpaperscissor.player.RandomGestureChoosingStrategy;
 import com.coderskitchen.rockpaperscissor.game.GameRule;

@@ -1,4 +1,4 @@
-package com.coderskitchen.rockpaperscissor.game.model;
+package com.coderskitchen.rockpaperscissor.game;
 
 import com.coderskitchen.rockpaperscissor.player.Player;
 

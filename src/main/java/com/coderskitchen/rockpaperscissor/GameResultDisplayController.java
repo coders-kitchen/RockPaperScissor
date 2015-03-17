@@ -1,7 +1,7 @@
 package com.coderskitchen.rockpaperscissor;
 
-import com.coderskitchen.rockpaperscissor.game.model.GameResultSheet;
-import com.coderskitchen.rockpaperscissor.game.model.GameSettings;
+import com.coderskitchen.rockpaperscissor.game.GameResultSheet;
+import com.coderskitchen.rockpaperscissor.game.GameSettings;
 
 /**
  * Created by Peter on 15.03.2015.

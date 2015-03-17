@@ -1,5 +1,7 @@
-package com.coderskitchen.rockpaperscissor.game.model;
+package com.coderskitchen.rockpaperscissor.game;
 
+import com.coderskitchen.rockpaperscissor.game.GameResultSheet;
+import com.coderskitchen.rockpaperscissor.game.RoundOutcome;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

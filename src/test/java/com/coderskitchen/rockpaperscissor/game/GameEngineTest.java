@@ -1,7 +1,5 @@
 package com.coderskitchen.rockpaperscissor.game;
 
-import com.coderskitchen.rockpaperscissor.game.model.GameResultSheet;
-import com.coderskitchen.rockpaperscissor.game.model.GameSettings;
 import com.coderskitchen.rockpaperscissor.player.Player;
 import com.coderskitchen.rockpaperscissor.player.RandomGestureChoosingStrategy;
 import org.junit.Test;

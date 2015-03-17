@@ -1,6 +1,5 @@
 package com.coderskitchen.rockpaperscissor.game;
 
-import com.coderskitchen.rockpaperscissor.game.model.RoundOutcome;
 import org.junit.Test;
 
 import static com.coderskitchen.rockpaperscissor.player.Gesture.*;

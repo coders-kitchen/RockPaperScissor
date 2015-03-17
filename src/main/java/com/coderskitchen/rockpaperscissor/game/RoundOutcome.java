@@ -1,4 +1,4 @@
-package com.coderskitchen.rockpaperscissor.game.model;
+package com.coderskitchen.rockpaperscissor.game;
 
 /**
  * Created by Peter on 15.03.2015.
