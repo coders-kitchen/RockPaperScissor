@@ -34,6 +34,6 @@ public class GameEngine {
         Gesture gestureChosenByFirstPlayer = firstPlayer.chooseGesture();
         Gesture gestureChosenBySecondPlayer = secondPlayer.chooseGesture();
 
-        return  rule.calculateRoundOutcome(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
+        return rule.calculateRoundOutcome(gestureChosenByFirstPlayer, gestureChosenBySecondPlayer);
     }
 }
