@@ -30,21 +30,21 @@ public class RockPaperScissorApplication {
     public void setup() {
         gameEngine = new GameEngine(new GameRule());
         gameResultDisplayController = new GameResultDisplayController();
-        gameSettings = buildGameSettings(NUMBER_OF_ROUNDS);
+        gameSettings = buildGameSettings();
     }
 
-    private GameSettings buildGameSettings(int numberOfRoundsToPlay) {
-        Player firstPlayer = buildPaperOnlyPlayer(PAPER_ONLY_PLAYER_NAME);
-        Player secondPlayer = buildRandomGesturePlayer(RANDOM_GESTURE_PLAYER_NAME);
-        return new GameSettings(numberOfRoundsToPlay, firstPlayer, secondPlayer);
+    private GameSettings buildGameSettings() {
+        Player firstPlayer = buildPaperOnlyPlayer();
+        Player secondPlayer = buildRandomGesturePlayer();
+        return new GameSettings(NUMBER_OF_ROUNDS, firstPlayer, secondPlayer);
     }
 
-    private static Player buildPaperOnlyPlayer(String playerName) {
-        return new Player(playerName, () -> Gesture.PAPER);
+    private static Player buildPaperOnlyPlayer() {
+        return new Player(PAPER_ONLY_PLAYER_NAME, () -> Gesture.PAPER);
     }
 
-    private static Player buildRandomGesturePlayer(String playerName) {
-        return new Player(playerName, new RandomGestureChoosingStrategy());
+    private static Player buildRandomGesturePlayer() {
+        return new Player(RANDOM_GESTURE_PLAYER_NAME, new RandomGestureChoosingStrategy());
     }
 
     public void runGameAndDisplayResults() {
