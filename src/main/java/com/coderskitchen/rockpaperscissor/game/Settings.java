@@ -28,7 +28,7 @@ public class Settings {
 
     private void verifyThatPlayerIsNotNull(Player player, String playerPosition) {
         if (player == null) {
-            throw new IllegalArgumentException(playerPosition + " player must be not null");
+            throw new IllegalArgumentException(String.format("%s player must be not null", playerPosition));
         }
     }
 
