@@ -4,7 +4,9 @@ import com.coderskitchen.rockpaperscissor.game.ResultSheet;
 import com.coderskitchen.rockpaperscissor.game.Settings;
 
 /**
- * Created by Peter on 15.03.2015.
+ * This class is responsible for displaying the results.
+ * As there is no need actually for having this abstract this class is not interface based.
+ * An future version could base upon an interface to have multiple display variants possible
  */
 public class ResultDisplayController {
 
