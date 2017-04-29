@@ -1,5 +1,7 @@
 # Rock Paper Scissor (RPS) - An exercise
 
+[![Build Status](https://travis-ci.org/coders-kitchen/RockPaperScissor.svg?branch=master)](https://travis-ci.org/coders-kitchen/RockPaperScissor)
+
 ## Introduction
 
 This small project implements the game Rock Paper Scissor in respect to the following game rules
